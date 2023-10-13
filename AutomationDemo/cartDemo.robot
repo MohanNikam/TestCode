@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../AutomationDemo/keyword.robot
-Library     DataDriver  ../Testdata/logindata.xls sheet_name=Sheet1
+Library     DataDriver  ../Testdata/login_data.xls sheet_name=Sheet1
 
 Suite Setup     Open my browser
 Suite Teardown  close all browsers
@@ -23,7 +23,7 @@ Valid Login
 	click login button
 	Products page should be visible
 
-	click addtoCart
+	click add_toCart
 	sleep	5
 	click Cart
 	sleep	5
@@ -42,7 +42,7 @@ Valid Login
 	sleep	5
 
 	capture page screenshot
-	click Finishcheckout
+	click Finish_checkout
 
 	capture page screenshot
-	close all borwsers
+	close all browsers

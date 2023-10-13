@@ -22,7 +22,7 @@ click login button
 Products page should be visible
     wait Until Page Contains        Swag Labs
 
-click addtoCart
+click add_toCart
 	click element       xpath://button[@name='add-to-cart-test.allthethings()-t-shirt-(red)']
 
 click Cart
@@ -51,7 +51,7 @@ Input postalCode
 click continueCheckout
     click element       xpath://input[@name='continue']
 
-click Finishcheckout
+click Finish_checkout
     click element       xpath://button[@name='finish']
 
 Thank you page should be visible
