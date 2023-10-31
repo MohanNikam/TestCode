@@ -21,12 +21,14 @@ ${click_product_img}    xpath://a[@id='item_2_img_link']
 ${add_item2_img}    xpath://button[@id='add-to-cart-sauce-labs-onesie']
 ${back_products}    xpath://button[@id='back-to-products']
 ${cart_click}    xpath://a[@class='shopping_cart_link']
-${continue_checkout}    xpath://input[@name='continue']
+${click_checkout}    xpath://button[@name='checkout']
+${firstname}    id:first-name
+${lastname}    id:last-name
+${postalcode}    id:postal-code
 
-
-${firstName}    name:firstName
-${lastName}    name:lastName
-${postalCode}    name:postalCode
+#${firstname}    name:firstName
+#${lastname}    name:lastName
+#${postalcode}    name:postalCode
 ${continue_checkout}    xpath://input[@name='continue']
 ${finish_checkout}    xpath://button[@name='finish']
 
@@ -38,12 +40,6 @@ ${Cart item price}    //div[@class='cart_item_label']//div[@class='inventory_ite
 ${Remove_Cart}    //button[contains(text(), 'REMOVE')]
 
 #Checkout Page Elements:
-#${First_Name}    //input[@id='first-name']
-#${Last_Name}    //input[@id='last-name']
-#${Zip_Code}    //input[@id='postal-code']
-
-${Continue_button}    //input[@value='CONTINUE']
-${Finish_button}    //input[@value='FINISH']
 
 #Order Confirmation Page Elements:
 ${Thank_You_msg}    //h2[contains(text(), 'THANK YOU')]

@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Resource    ../AutomationDemo/cartKeywords.robot
-Library     DataDriver  ../Testdata/logindata.xlsx sheet_name=Sheet1
+Library     DataDriver  ../Testdata/logindata.xlsx    sheet_name=Sheet1
 
 Suite Setup     Open my browser
 Suite Teardown  close all browsers
@@ -10,16 +10,15 @@ Test Template   Valid Login
 *** Variables ***
 
 *** Test Cases ***
-LoginTestwithExcel using     ${username}     ${password}     ${error_msg}       ${firstName}        ${lastName}     ${postalCode}
+LoginTestwithExcel using     ${username}    ${password}    ${firstName}    ${lastName}    ${postalCode}
 
 *** Keywords ***
 Valid Login
-    [Arguments]     ${username}     ${password}     ${firstName}        ${lastName}     ${postalCode}
-	Input username      ${username}
+    [Arguments]    ${username}    ${password}    ${firstName}    ${lastName}    ${postalCode}
+	Input username    ${username}
 	sleep   5
-	Input password      ${password}
+	Input password    ${password}
 	sleep	5
-
 	capture page screenshot
 	click login button
 	Products page should be visible
@@ -33,17 +32,17 @@ Valid Login
 	capture page screenshot
 	info page should be visible
 
-	input firstName
+	Input firstName    ${firstName}
 	sleep	5
-	input lastName
+	Input lastName    ${lastName}
 	sleep	5
-	input postalCode
+	Input postalCode    ${postalCode}
 	sleep	5
 	click continueCheckout
 	sleep	5
-
 	capture page screenshot
+
 	click Finish_checkout
-
 	capture page screenshot
+
 	close all browsers
